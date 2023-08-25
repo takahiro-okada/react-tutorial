@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import Board from './Board';
+import Moves from './Moves';
 
 export default function Game() {
   const [history, setHistory] = useState([Array(9).fill(null)]);
@@ -38,7 +39,7 @@ export default function Game() {
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className="game-info">
-        <ol>{moves}</ol>
+        <Moves history={history} jumpTo={jumpTo} />
       </div>
     </div>
   );
